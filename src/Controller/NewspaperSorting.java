@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controleur;
+package Controller;
 
 import Model.Document;
 
@@ -11,7 +11,7 @@ import Model.Document;
  *
  * @author hecto
  */
-public class BookSorting implements ISorting {
+public class NewspaperSorting implements ISorting {
 
     @Override
     public Document[] sortDocs(Document[] docs) {
