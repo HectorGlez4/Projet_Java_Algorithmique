@@ -14,18 +14,28 @@ import java.util.ArrayList;
  * @author hecto
  * @param <T>
  */
-public class Shelf<T extends Document> {
+public class Shelf<T extends Document> implements java.io.Serializable {
     private ArrayList<T> docs;
     private String type;
-    private int shelfNumber;
+    private String shelfID;
 
-    public int getShelfNumber() {
-        return shelfNumber;
+    public String getType() {
+        return type;
     }
 
-    public void setShelfNumber(int shelfNumber) {
-        this.shelfNumber = shelfNumber;
+    public void setType(String type) {
+        this.type = type;
     }
+
+    public String getShelfID() {
+        return shelfID;
+    }
+
+    public void setShelfID(String shelfID) {
+        this.shelfID = shelfID;
+    }
+
+    
     
     /**
      *
@@ -39,8 +49,9 @@ public class Shelf<T extends Document> {
         this.docs = docs;
     }
 
-    public Shelf() {
+    public Shelf(String shelfID) {
         this.docs = new ArrayList<>();
+        this.shelfID = shelfID;
     }
     
     @Override

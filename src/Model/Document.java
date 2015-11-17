@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author hecto
  */
-public abstract class Document {
+public abstract class Document implements java.io.Serializable {
     private String title;
     private String editor;
     private int numberPages;
