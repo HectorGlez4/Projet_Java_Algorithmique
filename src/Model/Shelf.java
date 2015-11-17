@@ -5,25 +5,42 @@
  */
 package Model;
 
+import Controller.ISorting;
+import Controller.SortManager;
 import java.util.ArrayList;
 
 /**
  *
  * @author hecto
+ * @param <T>
  */
-public class Shelf<T> {
+public class Shelf<T extends Document> {
     private ArrayList<T> docs;
+    private String type;
+    private int shelfNumber;
 
-    public ArrayList<T> getType() {
+    public int getShelfNumber() {
+        return shelfNumber;
+    }
+
+    public void setShelfNumber(int shelfNumber) {
+        this.shelfNumber = shelfNumber;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public ArrayList getDocs() {
         return docs;
     }
 
-    public void setType(ArrayList<T> docs) {
+    public void setDocs(ArrayList<T> docs) {
         this.docs = docs;
     }
 
     public Shelf() {
-        this.docs = new ArrayList<T>();
+        this.docs = new ArrayList<>();
     }
     
     @Override
@@ -39,6 +56,12 @@ public class Shelf<T> {
     public void  addDoc(T doc)
     {
         docs.add(doc);
+    }
+    
+    public void sort()
+    {
+        ISorting smethod = SortManager.sortStrategy(this);
+        this.setDocs(smethod.sortDocs(this.getDocs()));
     }
     
 }

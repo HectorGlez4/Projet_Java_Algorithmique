@@ -5,10 +5,11 @@
  */
 package Controller;
 import Model.Document;
+import java.util.ArrayList;
 /**
  *
  * @author hecto
  */
 public interface ISorting {
-    public Document[] sortDocs(Document[] docs);
+    public ArrayList<Document> sortDocs(ArrayList<Document> docs);
 }
