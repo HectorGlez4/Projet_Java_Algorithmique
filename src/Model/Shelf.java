@@ -49,14 +49,15 @@ public class Shelf<T extends Document> implements java.io.Serializable {
         this.docs = docs;
     }
 
-    public Shelf(String shelfID) {
-        this.docs = new ArrayList<>();
-        this.shelfID = shelfID;
+    public Shelf(String shelfID, String type) {
+        this.docs = new ArrayList<T>();
+        this.shelfID = shelfID; 
+        this.type = type;
     }
     
     @Override
     public String toString(){
-        String output = "";
+        String output = "Documents in shelf " + this.getShelfID() + "| Shelf type:" + this.getT()+ "\n";
         for(T doc : docs)
         {
             output += doc.toString() + "\n"; 

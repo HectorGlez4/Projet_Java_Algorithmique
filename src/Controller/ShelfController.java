@@ -13,10 +13,24 @@ import java.util.ArrayList;
 public class ShelfController {
     public static String shelfsList(ArrayList<Shelf> shelfs)
     {
-        String output = "";
+        String output = "\n\n List of shelfs:\n";
         for(Shelf s : shelfs)
         {
-            output += s.getShelfID() + "\n";
+            output += s.toString()+ "\n";
+        }
+        return output;
+    }
+   
+    public static ArrayList<Shelf> docuentShelfs(ArrayList<Shelf> shelfs , String doc)
+    {
+        ArrayList<Shelf> output =  new ArrayList<Shelf>();
+        for(Shelf sh : shelfs)
+        {
+            ArrayList docs =  sh.getDocs();
+            if(docs == null)
+            {
+                
+            }
         }
         return output;
     }
